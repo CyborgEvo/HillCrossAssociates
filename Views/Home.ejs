@@ -1,0 +1,192 @@
+<%- include ("Partials/header") -%>
+
+<section id="home">
+    <div class="container-fluid">
+        <!-- Navbar -->
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <a class="navbar-brand" href="#home">
+                <img src="favicon/favicon-32x32.png" alt="Company logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Why Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#wwd">Practicing Areas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#partners">Partners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Title -->
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12"></div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12 header-text">
+                <h1>HillCross Associates</h1>
+                <p>Legal Practicioners</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-5 col-md-12 col-sm-12 col-12 aboutus-text">
+                <h2>Who We Are</h2>
+                <br>
+                <% whoWeAre.map(function(wwa){ %>
+                    <p><%=wwa.paragragh1%></p>
+                    <p><%=wwa.paragragh2%></p>
+                <%});%>
+               
+            </div>
+            <div class="col-lg-7 col-md-12 col-sm-12 col-12">
+                <div class="aboutus-img">
+                    <img src="images/img5.jpg" alt="Scales photo">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+<section id="features">
+    <h2>Why Us?</h2>
+    <br>
+    <p><%=whyUs%></p>
+    <div class="row feature-content">
+        <div class="col-lg-4 feature-items">
+            <i class="fa-solid fa-gavel fa-4x icons"></i>
+            <h3>Integrity</h3>
+        </div>
+        <div class="col-lg-4 feature-items">
+            <i class="fa-solid fa-circle-check fa-4x icons"></i>
+            <h3>Diligence</h3>
+        </div>
+        <div class="col-lg-4 feature-items">
+            <i class="fa-solid fa-coins fa-4x icons"></i>
+            <h3>Cost Effectiveness</h3>
+        </div>
+    </div>
+
+</section>
+
+<section id="wwd">
+    <h2>Practicing Areas</h2>
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="wwd-img">
+                    <img src="images/img5.jpg" alt="Scales photo">
+                </div>
+            </div>
+            <div class="col-lg-6 wwd-text">
+                <ul class="wwd-list-items">
+                        <%wwd.map(function(item){%>
+                        <li><span><%= item %></span></li>
+                        <hr> 
+                       <% })%> 
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</section>
+
+<section id="partners">
+    <h2>Partners</h2>
+    <div id="partners-carousel" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-inner">
+           
+            <div class="carousel-item active"> 
+                <% partner1.map(function(partner){%>
+                <img src= "<%=partner.image%>" class="d-block w-100 partners-img" alt="...">  
+                    <h5> <%=partner.Name%> </h5>
+                <br>
+                <p> <%=partner.about1%></p>
+                <p><%=partner.about2%></p>  
+                <% })%> 
+            </div>
+            <div class="carousel-item">
+                <%partner2.map(function(partner){%>
+                <img src="<%=partner.image%>" class="d-block w-100 partners-img" alt="...">
+                <h5><%=partner.Name%></h5>
+                <br>
+                <p><%=partner.about1%></p>
+                <p><%=partner.about2%></p>    
+                <%})%>     
+            </div>
+            
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#partners-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#partners-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <br>
+
+
+</section>
+
+<section id="contact">
+    <h2>Get In Touch</h2>
+    <div class="row contact-content">
+
+        <div class="col-lg-4 contact-features">
+            <a class="contact-link" href="mailto:cliroaganachi@gmail.com">
+                <i class="fa-solid fa-envelope fa-4x contact-icons"></i>
+                <h3>Mail</h3>
+            </a>
+            <p>
+                cliroaganachi@gmail.com
+            </p>
+        </div>
+        <div class="col-lg-4 contact-features">
+            <a class="contact-link" href="tel:08129667054">
+                <i class="fa-solid fa-phone fa-4x contact-icons "></i>
+                <h3>Phone</h3>
+            </a>
+            <p>
+                +2348129667054
+            </p>
+        </div>
+        <div class="col-lg-4 contact-features">
+            <a class="contact-link"
+                href="https://www.google.com.ng/maps/place/23+Fatai+Atere+Way,+Papa+Ajao+102215,+Lagos/@6.541642,3.345188,17.5z/data=!4m5!3m4!1s0x103b8dc3352b7b8f:0x1586eebe5e351efc!8m2!3d6.5412755!4d3.347483?hl=en"
+                target="_blank">
+                <i class="fa-solid fa-location-dot fa-4x contact-icons"></i>
+                <h3>Address</h3>
+            </a>
+            <p>
+                1st Floor, Comfort House, Emmanuel Plaza, 23 Fatai Atere Way, Matori, Lagos.
+            </p>
+        </div>
+    </div>
+
+</section>
+
+
+<%- include("Partials/footer") -%>
